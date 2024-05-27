@@ -67,7 +67,59 @@ function hashMap() {
     }
     return arr;
   }
+  //6 length : returns number of keys stored in arr
+  function length() {
+    let length = 0;
+    for (ele of arr) {
+      if (ele) {
+        length++;
+      }
+    }
+    return length;
+  }
+  //7 clear : deletes all entries of arr
+  function clear() {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i] = null;
+    }
+  }
+  //8 keys : returns an array containig all the keys
+  function keys() {
+    keysArr = [];
+    for (ele of arr) {
+      if (ele) {
+        keysArr.push(ele.key);
+      }
+    }
+    return keysArr;
+  }
+  //9 values : returns an array containing all the values
+  function values() {
+    valueArr = [];
+    for (ele of arr) {
+      if (ele) {
+        valueArr.push(ele.value);
+      }
+    }
+
+    return valueArr;
+  }
+  //10 entries : returns an array containg key value pair
+  function entries() {
+    entry = [];
+    for (ele of arr) {
+      if (ele) {
+        entry.push([ele.key, ele.value]);
+      }
+    }
+    return entry;
+  }
   return {
+    values,
+    entries,
+    keys,
+    clear,
+    length,
     remove,
     has,
     get,
